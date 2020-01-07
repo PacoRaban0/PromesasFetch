@@ -1,12 +1,35 @@
 function sumarUno( numero, callback ){
+    if ( numero >= 7 ){
+        callback('Número muy alto');
+        return;
+    }
+
     setTimeout(() => {
-        callback( numero + 1);
+        callback( null, numero + 1);
     }, 800);
 }
 
-sumarUno(5, nuevoValor => {
-    sumarUno(nuevoValor, nuevoValor2 =>{
-        sumarUno(nuevoValor2, nuevoValor3=>{
+sumarUno(5,(error, nuevoValor) => {
+
+    if(error){
+        console.log(error);
+        return;
+    }
+
+    sumarUno(nuevoValor,(error, nuevoValor2) =>{
+
+        if(error){
+            console.log(error);
+            return;
+        }
+
+        sumarUno(nuevoValor2,(error, nuevoValor3) =>{
+
+            if(error){
+                console.log( error );
+                return;
+            }
+
             console.log( nuevoValor3 );
         });
         console.log( nuevoValor2 );
