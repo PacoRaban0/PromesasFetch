@@ -1,3 +1,5 @@
+//El callback es una funcion que se recibe como argumento
+//Se va a ejeecutar con la llamada a callaback
 function sumarUno( numero, callback ){
     if ( numero >= 7 ){
         callback('Número muy alto');
@@ -30,9 +32,9 @@ sumarUno(5,(error, nuevoValor) => {
                 return;
             }
 
-            console.log( nuevoValor3 );
+            console.log( nuevoValor3 );//Impresion del ultimo anidamiento
         });
         console.log( nuevoValor2 );
     });
-    console.log( nuevoValor );
+    console.log( nuevoValor );//Impresion del primer anidamiento
 });
