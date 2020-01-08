@@ -15,5 +15,14 @@ let sumarRapido = numero =>{
     });
 }
 
-sumarLento(5).then(console.log);
-sumarRapido(10).then(console.log); //Se ejecuta mas rapido por 300ms de timeout. No importa que este despues
+function returnTrue(){
+    return true;
+}
+
+//Arreglo de acualquier cosa recibida por promise all
+let cosas=[sumarLento(5), sumarRapido(10), returnTrue(), 'hola mundo'];
+
+//Si una promesa falla, todas fallan. SOLO PROMESAS. Todas se muestran a la vez
+Promise.all( cosas ) //Se meustran segun fueron declaradas
+    .then(console.log)
+    .catch(console.log);
