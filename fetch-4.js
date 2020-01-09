@@ -1,4 +1,4 @@
-fetch('https://reqres.in/api/users/1000')
+fetch('https://reqres.in/api/users/1000')// no hay usuario 100 error 404
     .then(resp => {
         // //Se clona la respuesta por que 
         // //una promesa no puede ser leida dos veces
